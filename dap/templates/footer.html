@@ -1,0 +1,19 @@
+{% load static i18n %}
+  <footer>
+    <main>
+      <section>
+        <ul>
+          <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+          <li><a href="#">{% trans "Contact Us" %}</a></li>
+          <li><a href="#">{% trans "Accessibility Statement" %}</a></li>
+        </ul>
+        <article>
+          <p>{% trans "Made with ❤️  by" %}
+            <a href="https://ntoll.org/" rel="noopener" target="_blank">Nicholas H.Tollervey</a>.</br/>
+            {% trans "Designed with ✨ by" %}
+            <a href="https://www.dev.ngo/" rel="noopener" target="_blank">The Developer Society.</a><br/><br/>
+            &copy; 2021 <a href="https://github.com/department-of-data-and-coding-affairs/DAP" target="_blank">Nicholas H.Tollervey</a>.<br /></p>
+        </article>
+      </section>
+    </main>
+  </footer>

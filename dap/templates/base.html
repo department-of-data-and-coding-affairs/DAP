@@ -1,0 +1,36 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}{% trans "Data Analytics Platform" %}{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/gd.css' %}">
+  <link rel="stylesheet" href="{% static 'css/dap.css' %}">
+  <meta name="theme-color" content="#0b0c0c">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="og:title" content="{% trans "Data Analytics Platform" %}">
+  <meta name="description" content="{% trans "An open data analytics platform." %}">
+  <meta name="og:description" content="{% trans "An open data analytics platform." %}">
+  <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
+  {% block js %}{% endblock %}
+</head>
+
+<body>
+  <a href="#main-content" class="hide">{% trans "Skip to main content" %}</a>
+  <a name="top"></a>
+  {% include "header.html" %}
+  <main id="main-content">
+    {% if messages %}
+    <p><img alt="Attention!" src="{% static 'img/attention.svg' %}" width="32" height="32" class="attention"/><strong>{% trans "Attention:" %}</strong></p>
+    {% for message in messages %}
+        <p><mark>{{ message }}</mark></p>
+    {% endfor %}
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+  {% include "footer.html" %}
+</body>
+
+</html>

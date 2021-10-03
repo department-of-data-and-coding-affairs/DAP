@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{% trans "Data Analytics Platform: Welcome" %}{% endblock %}
+
+{% block content %}
+
+<article>
+      <hgroup>
+        <h4><img src="{% static 'img/logo_square.svg' %}" class="inline-image" width="48">&nbsp;The Department of Data and Coding Affairs</h4>
+        <h1>Data Analytics Platform</h1>
+      </hgroup>
+      <p>Simple, clean and open.</p>
+      <p>
+        <input role="link" type="button" value="Source code"/>
+        <input role="link" type="submit" value="Documentation">
+        <input role="link" type="submit" value="Demo">
+      </p>
+    </article>
+
+<hr/>
+
+<h2>{% trans "Welcome..." %}</h2>
+
+<p>{% blocktrans %}
+This paragraph is translateable. In fact all the aspects of this Django web
+application can be translated.
+{% endblocktrans %}</p>
+
+<section>
+      <aside>
+        <h3>Simple</h3>
+        <p>{% lorem 32 w random %}</p>
+      </aside>
+      <aside>
+        <h3>Clean</h3>
+        <p>{% lorem 32 w random %}</p>
+      </aside>
+      <aside>
+        <h3>Open</h3>
+        <p>{% lorem 32 w random %}</p>
+      </aside>
+</section>
+
+<blockquote cite="https://govuk-prototype-kit.herokuapp.com/docs">
+  <q>I became frustrated with complex, opaque and hard to maintain code bases, so writing this seemed like the simple thing to do.</q>
+  <cite>- Nicholas Tollervey (author)</cite>
+</blockquote>
+
+<p>{% lorem %}</p>
+
+{% endblock %}

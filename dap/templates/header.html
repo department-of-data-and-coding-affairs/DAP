@@ -1,0 +1,28 @@
+{% load static i18n %}
+  <header>
+    <nav role="navigation">
+      <a href="/"><img alt="Data Analytics Logo" src="{% static 'img/logo.svg' %}" width="280"></a>
+      <ul>
+        <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+        <li><a href="#">{% trans "Data" %}</a></li>
+        <li><a href="#">{% trans "Analysis" %}</a></li>
+        <li><a href="#">{% trans "Results" %}</a></li>
+      {% if user.is_authenticated %}
+      {% if user.is_superuser %}
+        <li><a href="{% url 'admin:index' %}">{% trans "Admin" %}</a></li>
+      {% endif %}
+        <li>&nbsp;</li>
+        <li>
+          <a href="#">{{ user.username }}</a>
+        </li>
+      {% else %}
+        <li><a href="#">{% trans "Log in" %}</a></li>
+      {% endif %}
+      </ul>
+    </nav>
+  </header>
+  <nav>
+    <ol>
+      <li><a href="{% url 'home' %}">{% trans "Home" %}</a></li>
+    </ol>
+  </nav>
